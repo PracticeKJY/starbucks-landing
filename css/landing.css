@@ -66,6 +66,34 @@ img {
   background-color: #fff;
 }
 
+/*BACK TO POSITION*/
+.back-to-position {
+  opacity: 0;
+  transition: 1s;
+}
+.back-to-position.to-right {
+  transform: translateX(-150px);
+}
+.back-to-position.to-left {
+  transform: translateX(150px);
+}
+.show .back-to-position {
+  opacity: 1;
+  transform: translateX(0);
+}
+.show .back-to-position.delay-0 {
+  transition-delay: 0s;
+}
+.show .back-to-position.delay-1 {
+  transition-delay: 0.3s;
+}
+.show .back-to-position.delay-2 {
+  transition-delay: 0.6s;
+}
+.show .back-to-position.delay-3 {
+  transition-delay: 0.9s;
+}
+
 header {
   width: 100%;
   position: fixed;
@@ -285,4 +313,669 @@ header {
 }
 .visual .fade-in {
   opacity: 0;
+}
+
+/* notice */
+.notice {
+  width: 100%;
+  height: 62px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.notice .bg-left {
+  width: 52%;
+  height: 100%;
+  background-color: #333;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.notice .bg-right {
+  width: 48%;
+  height: 100%;
+  background-color: #f6f5ef;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.noticeContainer {
+  margin: 0 auto;
+  width: 1100px;
+  height: 62px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.noticeWrapper {
+  position: relative;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.noticeTitle {
+  color: #fff;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.swiper-notice {
+  display: flex;
+  height: 62px;
+  flex-grow: 1;
+}
+
+.swiper-notice .swiper-wrapper {
+  display: flex;
+}
+
+.swiper-notice .swiper-slide {
+  width: 400px !important;
+  height: 62px;
+  display: flex;
+  align-items: center;
+}
+
+.swiper-notice .swiper-slide a {
+  color: #fff;
+}
+
+.notice-line__more {
+  position: absolute;
+  right: 12%;
+  top: 55%;
+  transform: translateY(-50%);
+}
+
+.notice-line__more span {
+  color: #fff;
+}
+
+.promotionIntro {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.promotionIntro .material-icons {
+  cursor: pointer;
+}
+
+.promotionIntro h4 {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+/* promotion */
+.promotion {
+  position: relative;
+  height: 693px;
+  background-color: #f6f5ef;
+  /* padding-top: 40px; */
+  transition: height 0.4s;
+}
+
+.promotion.hide {
+  height: 0;
+}
+
+.swiper-promotion {
+  /* width: 100%; */
+  width: calc(819px * 3 + 20px);
+  height: 553px;
+  margin-left: calc((819px * 3 + 20px) / -2);
+  position: absolute;
+  top: 40px;
+  left: 50%;
+}
+
+.swiper-prev,
+.swiper-next {
+  cursor: pointer;
+  position: absolute;
+  top: 300px;
+  z-index: 1;
+  width: 42px;
+  height: 42px;
+  outline: none;
+  border: 2px solid #333;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.promotion .swiper-prev {
+  left: 50%;
+  margin-left: -480px;
+}
+.promotion .swiper-next {
+  right: 50%;
+  margin-right: -480px;
+}
+
+.promotion .swiper-prev:hover,
+.promotion .swiper-next:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* 슬라이드 넘어가면서 투명효과 */
+.promotion .swiper-slide {
+  position: relative;
+  opacity: 0.5;
+  transition: opacity 1s;
+}
+.promotion .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.promotion .swiper-slide-active {
+  opacity: 1;
+}
+
+.swiper-slide .btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.promotion .swiper-pagination {
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+.promotion .swiper-pagination .swiper-pagination-bullet {
+  background-color: transparent;
+  background-image: url("../images/promotion_slide_pager.png");
+  width: 13px;
+  height: 12px;
+  margin-right: 6px;
+  outline: none;
+}
+.promotion .swiper-pagination .swiper-pagination-bullet:last-child {
+  margin-right: 0;
+}
+.promotion .swiper-pagination .swiper-pagination-bullet-active {
+  background-image: url("../images/promotion_slide_pager_on.png");
+}
+
+/* reward */
+.reward {
+  position: relative;
+  z-index: 5;
+}
+
+.reward .bg-left {
+  width: 50%;
+  height: 100%;
+  background-color: #272727;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.reward .bg-right {
+  width: 50%;
+  height: 100%;
+  background-color: #d5c798;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.rewardContainer {
+  background-image: url("../images/rewards.jpg");
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  height: 241px;
+}
+
+.btnContainer {
+  width: 250px;
+  position: absolute;
+  display: flex;
+  flex-flow: row wrap;
+  right: 0;
+  bottom: 24px;
+}
+
+.signUp {
+  margin-right: 10px;
+  background-color: #333;
+  color: #fff;
+}
+.signUp:hover {
+  background-color: #d5c798;
+  color: #333;
+}
+
+.signIn {
+  width: 110px;
+  background-color: transparent;
+}
+
+.present {
+  flex: 1;
+  margin-top: 10px;
+  background-color: transparent;
+}
+
+/* youtube */
+.youtube {
+  position: relative;
+  height: 700px;
+  background-color: #333;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.youtube__area {
+  width: 1920px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: calc(1920px / -2);
+  margin-top: calc(1920px * 9 / 16 / -2);
+}
+
+.youtube .youtube__area::before {
+  content: "";
+  display: block;
+  /* 16:9 영상 비율로 요소 크기 만들기! */
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+}
+
+.youtube__cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-image: url("../images/video_cover_pattern.png");
+}
+
+#player {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.youtube__icon {
+  width: 1100px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.floating1 {
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+.floating2 {
+  position: absolute;
+  top: 350px;
+  left: 150px;
+}
+
+/* season product */
+.seasonProduct {
+  background-image: url("../images/season_product_bg.jpg");
+}
+
+.seasonWrapper {
+  width: 1100px;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.floating3 {
+  position: absolute;
+  top: -200px;
+  right: 0;
+  z-index: 5;
+}
+
+.seasonTextImageContainer {
+  position: absolute;
+  top: 110px;
+  right: 100px;
+}
+
+.seasonTextImageContainer .title {
+  margin-bottom: 10px;
+}
+.seasonTextImageContainer .description {
+  margin-bottom: 15px;
+}
+
+/* reserve coffee */
+.reserveCoffee {
+  background-image: url("../images/reserve_bg.jpg");
+}
+.reserveCoffeeWrapper {
+  width: 1100px;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+}
+.reserve-logo {
+  position: absolute;
+  top: 110px;
+  left: 0;
+}
+
+.reserveTextContainer {
+  position: absolute;
+  top: 124px;
+  left: 208px;
+}
+
+.btn--gold {
+  border-color: #d9aa8a;
+  background-color: transparent;
+}
+
+.reserveCoffeeWrapper .product {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* favorite */
+.favorite {
+  background-image: url("../images/favorite_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.favoriteWrapper {
+  padding: 110px 0;
+  width: 1100px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.favoriteTextContainer {
+  width: 362px;
+  margin-left: 100px;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.favoriteTextContainer .title {
+  margin-bottom: 40px;
+}
+.favoriteTextContainer .description {
+  margin-bottom: 40px;
+}
+
+.favoriteTextContainer .btn--white {
+  background-color: transparent;
+}
+
+.favoriteTextContainer .btn--white:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* reserve store */
+.reserveStore {
+  background-image: url("../images/reserve_store_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.storeContainer {
+  width: 1100px;
+  height: 600px;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.medal {
+  width: 334px;
+  height: 334px;
+  perspective: 600px;
+}
+
+.front,
+.back {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  transition: 1s;
+  backface-visibility: hidden;
+}
+
+/* 뒤집히는카드 = 부모div를 호버할 시, 자식인 앞면 뒷면 카드의 위치가 뒤집히도록. 또한 backface-visibility:hidden을 줘서 숨기게, transition은 1s 정도 */
+
+.storeContainer .medal .front {
+  transform: rotateY(0deg);
+}
+
+.storeContainer .medal:hover .front {
+  transform: rotateY(180deg);
+}
+
+.storeContainer .medal .back {
+  transform: rotateY(-180deg);
+}
+.storeContainer .medal:hover .back {
+  transform: rotateY(0deg);
+}
+
+.back .btn {
+  position: absolute;
+  top: 240px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.back .btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* find store */
+.findStore {
+  background-image: url("../images/find_store_bg.jpg");
+}
+
+.findStoreWrapper {
+  width: 1100px;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.texture1 {
+  position: absolute;
+  top: 0;
+  left: 400px;
+}
+
+.texture2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.picture {
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.picture1 {
+  top: -60px;
+  left: 0;
+}
+.picture2 {
+  top: 150px;
+  left: 250px;
+}
+
+.findStoreTextContainer {
+  position: absolute;
+  top: 120px;
+  left: 550px;
+}
+
+.findStoreTextContainer .title {
+  margin-bottom: 20px;
+}
+
+.findStoreTextContainer .description {
+  margin-bottom: 20px;
+}
+
+/* award */
+.award {
+  background-color: #272727;
+  overflow: hidden;
+}
+
+.awardWrapper {
+  width: 1100px;
+  position: relative;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.awardWrapper .swiper-award {
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+}
+
+.awardWrapper .swiper-slide {
+  width: 196px;
+  margin-right: 30px;
+}
+
+.awardWrapper .swiper-prev,
+.awardWrapper .swiper-next {
+  background-color: transparent;
+  width: 42px;
+  height: 42px;
+  outline: none;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: 0.3;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+.awardWrapper .swiper-prev {
+  left: -100px;
+}
+.awardWrapper .swiper-next {
+  right: -100px;
+}
+.awardWrapper .swiper-prev:hover,
+.awardWrapper .swiper-next:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* footer */
+.footer {
+  background-color: #272727;
+  border-top: 1px solid #333;
+}
+.footerWrapper {
+  width: 1100px;
+  position: relative;
+  margin: 0 auto;
+  padding: 40px 0 60px 0;
+}
+.footerMenu {
+  display: flex;
+  justify-content: center;
+}
+.footerMenu li {
+  position: relative;
+}
+
+.footerMenu a {
+  display: block;
+  color: #ccc;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 15px;
+}
+
+.footerMenu .green {
+  color: #669900;
+}
+
+.btn-group {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-group .btn {
+  background-color: transparent;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.info {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.info span {
+  margin-right: 20px;
+  color: #999;
+  font-size: 12px;
+}
+
+.copyright {
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.logo {
+  margin: 30px auto 0;
 }
